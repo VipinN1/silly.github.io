@@ -1,116 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-    <style>
-
-    .center-heading
-    {
-        font-size: 60px;
-        text-align: center;
-    }
-
-    .center-text
-    {
-        margin: 10px;
-
-        padding: 10px 20px;
-        font-size:  40px;
-
-        text-align: center;
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    </style>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentines</title>
+    <title>Happy Anniversary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff4081;
+        }
+        .image-slot {
+            width: 300px;
+            height: 300px;
+            border: 2px dashed #ff4081;
+            margin: 20px auto;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff4081;
+            font-size: 18px;
+        }
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        button:hover {
+            background-color: #d81b60;
+        }
+        .heart {
+            position: absolute;
+            font-size: 30px;
+            color: red;
+            animation: floatUp 3s infinite ease-in-out;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+    </style>
 </head>
 <body>
-    <h1 class="center-heading">♡ Will you be my Valentine? ♡</h1>
-
-    <div style="text-align: center;">
-        <button id="yesButton" class="center-text">Yes!</button>
-        <button id="noButton" class="center-text">No!</button>
-    </div>
-
-    <div style="text-align: center;">
-        <img id="originalImg" src="https://ae01.alicdn.com/kf/H4e78b7fe074c4ea39806df1a28a62f11k.jpg_640x640Q90.jpg_.webp"
-    </div>
-
-    <div id="responseSection" class="hidden" style="text-align: center;">
-        <p id="responseText" class="center-heading"></p>
-        <img id="responseImage" class="hidden" src="">
-    </div>
-
-
-
+    <h1>Happy Anniversary!</h1>
+    
+    <div class="image-slot" id="img1">Click to add image</div>
+    <div class="image-slot" id="img2">Click to add image</div>
+    
+    <button onclick="showHearts()">Show Hearts</button>
+    <button onclick="playMusic()">Play Our Song</button>
+    
+    <audio id="loveSong" src="your-song.mp3"></audio>
 
     <script>
-
-let noButtonClicks = 0;
-
-        document.getElementById('yesButton').addEventListener('click', function() {
-            
-            document.getElementById('originalImg').classList.add('hidden');
-            document.getElementById('responseSection').classList.remove('hidden');
-            document.getElementById('responseText').textContent = 'YAAAYYYYY YAYAYAYAYA HEHE YAYA hehe :3 ♡ ♡ ♡ ♡ i wub uuu';
-            document.getElementById('responseImage').src = 'https://ih1.redbubble.net/image.1517486724.6089/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg';  
-            document.getElementById('responseImage').classList.remove('hidden');
-        
-        });
-
-        document.getElementById('noButton').addEventListener('click', function() {
-            
-            noButtonClicks++;
-
-            switch(noButtonClicks)
-            {
-                case 1:
-                    document.getElementById('originalImg').classList.add('hidden');
-                document.getElementById('responseSection').classList.remove('hidden');
-                document.getElementById('responseText').textContent = 'WHAT WHY WOULD U PRESS THIS :C WHAT WHAT';
-                document.getElementById('responseImage').src = 'https://i.pinimg.com/originals/cc/a5/05/cca50587493dff9ec478eadaff2734e4.png';  
-                document.getElementById('responseImage').classList.remove('hidden');
-                break;
-                case 2:
-                    document.getElementById('responseText').textContent = 'U PRESSED IT AGAIN WHYYYY NOOOOOO :CCCC';
-                    document.getElementById('responseImage').src = 'https://bradleyfarless2.files.wordpress.com/2021/09/cd06c-img_20170611_024658_226_35168134801_o-scaled-1.jpg?w=1200';  
-                    break;
-                case 3:arguments
-                document.getElementById('responseText').textContent = 'STOP UR SO MEAN :CCCC';
-                document.getElementById('responseImage').src = 'https://www.artbox.co.uk/images/SS13224_RK_Small_Sad_1_650.jpg';  
-
-                    break;
-                case 4:
-                document.getElementById('responseText').textContent = 'I THOUGHT U LIKED ME >:CCC';
-                document.getElementById('responseImage').src = 'https://cdn.shopify.com/shopify-email/variants/hwt0d6e5plqb7rgs4u14y9x1xllg/d1ea4c47ba48571d6311ce650124e73f54f74a3b573b4793f695c1282de0554c.jpg';  
-
-                    break;
-                
-                    case 5:
-                document.getElementById('responseText').textContent = 'U BETTER CHANGE UR MIND!!!!';
-                document.getElementById('responseImage').src = 'https://64.media.tumblr.com/0e76e061d8b7da6a2e5f124c104a0541/09a66b3ea61c1d1c-e6/s1280x1920/9476a0882546465f10ae22f7b1151e266806b8df.jpg';  
-
-                    break;
-
-                    case 6:
-                document.getElementById('responseText').textContent = 'meanie :C';
-                document.getElementById('responseImage').src = 'https://i.pinimg.com/736x/6d/7e/26/6d7e265cba4d471a1750c9582e0b7e85.jpg';  
-
-                    break;
+        document.getElementById('img1').addEventListener('click', function() {
+            let url = prompt("Enter image URL for the first slot:");
+            if (url) {
+                this.style.backgroundImage = `url('${url}')`;
+                this.textContent = "";
             }
-
-           
-        
         });
 
-       
-    </script>
+        document.getElementById('img2').addEventListener('click', function() {
+            let url = prompt("Enter image URL for the second slot:");
+            if (url) {
+                this.style.backgroundImage = `url('${url}')`;
+                this.textContent = "";
+            }
+        });
 
+        function showHearts() {
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.innerHTML = '❤️';
+                heart.style.left = Math.random() * window.innerWidth + 'px';
+                heart.style.top = Math.random() * window.innerHeight + 'px';
+                document.body.appendChild(heart);
+                setTimeout(() => heart.remove(), 3000);
+            }
+        }
+
+        function playMusic() {
+            let audio = document.getElementById('loveSong');
+            audio.play();
+        }
+    </script>
 </body>
 </html>
